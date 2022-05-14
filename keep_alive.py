@@ -1,7 +1,7 @@
-from quart import Quart
+from flask import Flask
 from threading import Thread
 
-app = Quart('')
+app = Flask('')
 
 @app.route('/')
 def home():
