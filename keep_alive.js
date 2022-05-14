@@ -1,13 +1,15 @@
-const express = require('express');
-const app = express();
-app.use(express.static('public'));
+const express = require("express")
 
-const https = require('https');
-app.get("/", (request, response) => {
-    response.sendStatus(200);
-});
+const server = express()
 
-app.listen(3000);
+server.all("/", (req, res) => {
+  res.send("Bot is running!")
+})
 
-setInterval(() => {
-    https.get(''); //repl}, 1);
+function keepAlive() {
+  server.listen(3000, () => {
+    console.log("Server is ready.")
+  })
+}
+
+module.exports = keepAlive
